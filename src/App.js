@@ -192,9 +192,9 @@ export const App = () => (
             // font: "/MOONGET_Heavy.blob",
           }}
         >
-          Aménagement bureau,
+          Aménagement bureau
           <br />
-          salon,
+          salon
           <br />
           boutiques
           <br />
@@ -221,7 +221,7 @@ export const App = () => (
             // font: "/MOONGET_Heavy.blob",
           }}
         >
-          maison traditionnelle,
+          maison traditionnelle
           <br />
           maison design
         </h1>

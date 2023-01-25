@@ -41,7 +41,7 @@ function Overlay() {
         <div className="frame__links">
           <a
             className="frame__link"
-            href="http://tympanus.net/Tutorials/PhysicsMenu/"
+            href="https://simple-presentation3d.vercel.app/"
             style={{
               fontSize: "18px",
               color: "#36B5D4",
@@ -51,7 +51,8 @@ function Overlay() {
           </a>
           <a
             className="frame__link"
-            href="https://tympanus.net/codrops/?p=45441"
+            href="https://14-go-live-gules.vercel.app/"
+            class="target"
             style={{
               fontSize: "18px",
               color: "#36B5D4",
@@ -61,7 +62,7 @@ function Overlay() {
           </a>
           <a
             className="frame__link"
-            href="https://github.com/drcmda/the-substance"
+            href="https://basicom.fr/"
             style={{
               fontSize: "18px",
               color: "#36B5D4",

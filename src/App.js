@@ -30,7 +30,7 @@ function Item({ url, scale, ...props }) {
     );
     ref.current.material.zoom = THREE.MathUtils.damp(
       ref.current.material.zoom,
-      visible.current ? 1 : 1.5,
+      visible.current ? 1 : 3,
       4,
       delta
     );
@@ -58,7 +58,7 @@ function Items({ url, scale, ...props }) {
   const { width: w, height: h } = useThree((state) => state.viewport);
   return (
     <Scroll>
-      <Item url="/logo-basicom.png" scale={[8, 8, 8]} position={[0, 2, 0]} />
+      <Item url="/logo-basicom.png" scale={[8, 8, 8]} position={[0, 1, 0]} />
       {/* <Text
         color={"#199CD2"}
         fontSize={1}
@@ -72,42 +72,80 @@ function Items({ url, scale, ...props }) {
       >
         BASICOM3D
       </Text> */}
-      <Item url="/1.jpg" scale={[w / 3, w / 3, 1]} position={[-w / 6, -8, 0]} />
-      <Item url="/2.jpg" scale={[2, w / 3, 1]} position={[w / 30, -h, 0]} />
       <Item
-        url="/3.jpg"
-        scale={[w / 3, w / 5, 1]}
-        position={[-w / 4, -h * 1, 0]}
+        url="architecture_interieure/3.jpg"
+        scale={[w / 4, w / 3, 3]}
+        position={[-w / 3.5, -10.5, 0]}
       />
       <Item
-        url="/4.jpg"
-        scale={[w / 5, w / 5, 1]}
-        position={[w / 4, -h * 1.2, 0]}
+        url="architecture_interieure/1.jpg"
+        scale={[w / 4, w / 8, 10]}
+        position={[-w / 3.5, -16.7, 0]}
       />
       <Item
-        url="/5.jpg"
-        scale={[w / 5, w / 5, 1]}
-        position={[w / 10, -h * 1.75, 0]}
+        url="architecture_interieure/7.jpg"
+        scale={[w / 2, w / 4, 1]}
+        position={[w / 8, -14, 0]}
       />
       <Item
-        url="/6.jpg"
-        scale={[w / 3, w / 3, 1]}
-        position={[-w / 4, -h * 2, 0]}
+        url="architecture_interieure/8.jpg"
+        scale={[w / 3, w / 6, 2]}
+        position={[w / 40, -8.5, 0]}
       />
       <Item
-        url="/7.jpg"
-        scale={[w / 3, w / 5, 1]}
-        position={[-w / 4, -h * 2.6, 0]}
+        url="architecture_exterieure/1.jpg"
+        scale={[w / 1.2, w / 6, 1.5]}
+        position={[w / 40, -25.5, 0]}
       />
       <Item
-        url="/8.jpg"
-        scale={[w / 2, w / 2, 1]}
-        position={[w / 4, -h * 3.1, 0]}
+        url="architecture_exterieure/2.jpg"
+        scale={[w / 1.8, w / 4, 1.5]}
+        position={[-w / 8.7, -31, 0]}
       />
       <Item
-        url="/9.jpg"
-        scale={[w / 2.5, w / 2, 1]}
-        position={[-w / 6, -h * 4.1, 0]}
+        url="integrations/1.jpg"
+        scale={[w / 1.15, w / 4, 1.5]}
+        position={[w / 40, -44, 0]}
+      />
+      <Item
+        url="integrations/2.jpg"
+        scale={[w / 2.2, w / 4, 1.5]}
+        position={[-w / 5.5, -50.5, 0]}
+      />
+      <Item
+        url="integrations/5.jpg"
+        scale={[w / 1.9, w / 4.5, 1.5]}
+        position={[-w / 7, -56.9, 0]}
+      />
+      <Item
+        url="integrations/3.jpg"
+        scale={[w / 3.5, w / 2.3, 1.5]}
+        position={[w / 3.3, -52.7, 0]}
+      />
+      <Item
+        url="integrations/4.jpg"
+        scale={[w / 3.5, w / 2.3, 1.5]}
+        position={[w / 3.3, -64, 0]}
+      />
+      <Item
+        url="integrations/6.jpg"
+        scale={[w / 1.9, w / 3.5, 1.5]}
+        position={[-w / 7, -64, 0]}
+      />
+      <Item
+        url="design_produit/1.jpg"
+        scale={[w / 1.9, w / 3.5, 1.5]}
+        position={[-w / 7, -80.7, 0]}
+      />
+      <Item
+        url="design_produit/3.jpg"
+        scale={[w / 1.9, w / 3.5, 1.5]}
+        position={[-w / 7, -73, 0]}
+      />
+      <Item
+        url="design_produit/6.jpg"
+        scale={[w / 4, w / 1.7, 1.5]}
+        position={[w / 3, -77, 0]}
       />
     </Scroll>
   );
@@ -121,13 +159,13 @@ export const App = () => (
     dpr={[1, 1.5]}
   >
     <color attach="background" args={["#ffffff"]} />" "
-    <ScrollControls damping={0.15} pages={5}>
+    <ScrollControls damping={0.15} pages={8}>
       <Items />
       <Scroll
         html
         style={{
           width: "100%",
-          color: "#199CD2",
+          color: "#36B5D4",
           font: "https://fonts.gstatic.com/s/raleway/v14/1Ptrg8zYS_SKggPNwK4vaqI.woff",
         }}
       >
@@ -135,82 +173,90 @@ export const App = () => (
           style={{
             position: "absolute",
             top: `100vh`,
-            right: "15vw",
+            right: "10vw",
             fontSize: "10em",
             transform: `translate3d(0,-100%,0)`,
             // font: "/MOONGET_Heavy.blob",
           }}
         >
-          Maison Kheops
+          Architecture d'Intérieur
         </h1>
-        <p
-          className="kheops"
+        <h1
           style={{
-            position: "relative",
-
+            position: "absolute",
+            top: `140vh`,
+            right: "2vw",
+            fontSize: "3.5em",
             transform: `translate3d(0,-100%,0)`,
+            lineHeight: `5vh`,
             // font: "/MOONGET_Heavy.blob",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna
-          justo, hendrerit in purus ac, elementum cursus urna. Nunc vehicula sem
-          vel consectetur tempor. In a vehicula nisi, laoreet rhoncus odio. Sed
-          orci leo, hendrerit id dui a, suscipit egestas ex. Suspendisse commodo
-          sem sodales lobortis cursus. Quisque a rhoncus lorem, a accumsan
-          mauris.
-        </p>
+          Aménagement bureau,
+          <br />
+          salon,
+          <br />
+          boutiques
+          <br />
+          salle de bain
+        </h1>
         <h1
           style={{
             position: "absolute",
-            top: "180vh",
+            top: "232vh",
             left: "10vw",
             fontSize: "10em",
           }}
         >
-          DE
+          Architecture d'Extérieur
         </h1>
         <h1
           style={{
             position: "absolute",
-            top: "260vh",
-            left: "48vw",
-            fontSize: "7em",
+            top: `300vh`,
+            left: "68vw",
+            fontSize: "3.5em",
+            transform: `translate3d(0,-100%,0)`,
+            lineHeight: `5vh`,
+            // font: "/MOONGET_Heavy.blob",
           }}
         >
-          COMMUNICATION
+          maison traditionnelle,
           <br />
-          <br />
-          360°,
+          maison design
         </h1>
         <h1
           style={{
             position: "absolute",
-            top: "350vh",
+            top: "365vh",
             left: "10vw",
             fontSize: "10em",
+            lineHeight: `15vh`,
           }}
         >
-          GUADELOUPE
+          Intégration 3D
+          <br />
+          sur photo réelle
         </h1>
         <h1
           style={{
             position: "absolute",
-            top: "420vh",
-            right: "5vw",
-            fontSize: "8em",
-          }}
-        >
-          MARTINIQUE
-        </h1>
-        <h1
-          style={{
-            position: "absolute",
-            top: "470vh",
-            right: "5vw",
+            top: "665vh",
+            left: "36vw",
             fontSize: "10em",
           }}
         >
-          GUYANE
+          Design
+        </h1>
+        <h1
+          style={{
+            position: "absolute",
+            top: "665vh",
+            right: "4.4vw",
+            fontSize: "10em",
+          }}
+        >
+          Produit
         </h1>
       </Scroll>
     </ScrollControls>

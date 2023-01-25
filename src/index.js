@@ -23,7 +23,7 @@ function Overlay() {
           top: 40,
           left: 90,
           fontSize: "13px",
-          color: "#4697CF",
+          color: "#36B5D4",
         }}
       >
         <br />
@@ -34,7 +34,7 @@ function Overlay() {
         className="frame"
         style={{
           fontSize: "18px",
-          color: "#4697CF",
+          color: "#36B5D4",
         }}
       >
         <h1 className="frame__title">Basicom, AGENCE DE COMMUNICATION 360°</h1>
@@ -42,18 +42,30 @@ function Overlay() {
           <a
             className="frame__link"
             href="http://tympanus.net/Tutorials/PhysicsMenu/"
+            style={{
+              fontSize: "18px",
+              color: "#36B5D4",
+            }}
           >
             Qui sommes-nous
           </a>
           <a
             className="frame__link"
             href="https://tympanus.net/codrops/?p=45441"
+            style={{
+              fontSize: "18px",
+              color: "#36B5D4",
+            }}
           >
             Article
           </a>
           <a
             className="frame__link"
             href="https://github.com/drcmda/the-substance"
+            style={{
+              fontSize: "18px",
+              color: "#36B5D4",
+            }}
           >
             Nous contacter
           </a>

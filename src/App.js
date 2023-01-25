@@ -185,7 +185,7 @@ export const App = () => (
           style={{
             position: "absolute",
             top: `140vh`,
-            right: "2vw",
+            right: "1vw",
             fontSize: "3.5em",
             transform: `translate3d(0,-100%,0)`,
             lineHeight: `5vh`,
@@ -252,7 +252,7 @@ export const App = () => (
           style={{
             position: "absolute",
             top: "665vh",
-            right: "4.4vw",
+            right: "3.7vw",
             fontSize: "10em",
           }}
         >

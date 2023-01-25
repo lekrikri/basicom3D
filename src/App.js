@@ -11,7 +11,6 @@ import {
   Text,
   Center,
 } from "@react-three/drei";
-import { ReactComponent as Logo } from "./components/logo-basicom.svg";
 
 // import Plane from "./components/Plane";
 
@@ -55,11 +54,17 @@ function Item({ url, scale, ...props }) {
   );
 }
 
-function Items() {
+function Items({ url, scale, ...props }) {
   const { width: w, height: h } = useThree((state) => state.viewport);
   return (
     <Scroll>
-      <Text
+      <Image
+        url="/logo-basicom.png"
+        transparent
+        position={[0, 1.5, 0]}
+        scale={8}
+      />
+      {/* <Text
         color={"#199CD2"}
         fontSize={1}
         maxWidth={200}
@@ -71,8 +76,13 @@ function Items() {
         anchorY="middle"
       >
         BASICOM3D
-      </Text>
-      <Item url="/1.jpg" scale={[w / 3, w / 3, 1]} position={[-w / 6, -6, 0]} />
+      </Text> */}
+      <Item
+        url="/1.jpg"
+        scale={[w / 3, w / 3, 1]}
+        position={[-w / 6, -8, 0]}
+        html
+      />
       <Item url="/2.jpg" scale={[2, w / 3, 1]} position={[w / 30, -h, 0]} />
       <Item
         url="/3.jpg"
@@ -141,8 +151,24 @@ export const App = () => (
             // font: "/MOONGET_Heavy.blob",
           }}
         >
-          Agence
+          Maison Kheops
         </h1>
+        <p
+          className="kheops"
+          style={{
+            position: "relative",
+
+            transform: `translate3d(0,-100%,0)`,
+            // font: "/MOONGET_Heavy.blob",
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna
+          justo, hendrerit in purus ac, elementum cursus urna. Nunc vehicula sem
+          vel consectetur tempor. In a vehicula nisi, laoreet rhoncus odio. Sed
+          orci leo, hendrerit id dui a, suscipit egestas ex. Suspendisse commodo
+          sem sodales lobortis cursus. Quisque a rhoncus lorem, a accumsan
+          mauris.
+        </p>
         <h1
           style={{
             position: "absolute",
@@ -174,19 +200,27 @@ export const App = () => (
             fontSize: "10em",
           }}
         >
-          -GUADELOUPE-
+          GUADELOUPE
         </h1>
         <h1
           style={{
             position: "absolute",
-            top: "450vh",
-            right: "10vw",
+            top: "420vh",
+            right: "5vw",
+            fontSize: "8em",
+          }}
+        >
+          MARTINIQUE
+        </h1>
+        <h1
+          style={{
+            position: "absolute",
+            top: "470vh",
+            right: "5vw",
             fontSize: "10em",
           }}
         >
-          -MARTINIQUE-
-          <br />
-          -GUYANE-
+          GUYANE
         </h1>
       </Scroll>
     </ScrollControls>

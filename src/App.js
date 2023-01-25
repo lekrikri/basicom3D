@@ -34,12 +34,12 @@ function Item({ url, scale, ...props }) {
       4,
       delta
     );
-    ref.current.material.grayscale = THREE.MathUtils.damp(
-      ref.current.material.grayscale,
-      hovered ? 0 : 1,
-      4,
-      delta
-    );
+    // ref.current.material.grayscale = THREE.MathUtils.damp(
+    //   ref.current.material.grayscale,
+    //   hovered ? 0 : 1,
+    //   4,
+    //   delta
+    // );
   });
   return (
     <group {...props}>
@@ -58,12 +58,7 @@ function Items({ url, scale, ...props }) {
   const { width: w, height: h } = useThree((state) => state.viewport);
   return (
     <Scroll>
-      <Image
-        url="/logo-basicom.png"
-        transparent
-        position={[0, 1.5, 0]}
-        scale={8}
-      />
+      <Item url="/logo-basicom.png" scale={[8, 8, 8]} position={[0, 2, 0]} />
       {/* <Text
         color={"#199CD2"}
         fontSize={1}
@@ -77,12 +72,7 @@ function Items({ url, scale, ...props }) {
       >
         BASICOM3D
       </Text> */}
-      <Item
-        url="/1.jpg"
-        scale={[w / 3, w / 3, 1]}
-        position={[-w / 6, -8, 0]}
-        html
-      />
+      <Item url="/1.jpg" scale={[w / 3, w / 3, 1]} position={[-w / 6, -8, 0]} />
       <Item url="/2.jpg" scale={[2, w / 3, 1]} position={[w / 30, -h, 0]} />
       <Item
         url="/3.jpg"
@@ -130,7 +120,7 @@ export const App = () => (
     gl={{ alpha: false, antialias: false, stencil: false, depth: false }}
     dpr={[1, 1.5]}
   >
-    <color attach="background" args={["#f0f0f0"]} />" "
+    <color attach="background" args={["#ffffff"]} />" "
     <ScrollControls damping={0.15} pages={5}>
       <Items />
       <Scroll
